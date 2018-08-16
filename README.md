@@ -1,6 +1,9 @@
 # 关于Unity版本
-目前基于Unity 2018.2.0f2，理论上可以支持Unity 5.x
-有指定版本需要支持，可以提自己fork pr
+目前基于Unity 2018.2.0f2，C# .Net 4.x Equivalent
+
+理论上可以支持Unity 5.x
+
+有其他的支持需求，可以提issue或者pr
 
 # Unity-SDKConfiger
 
