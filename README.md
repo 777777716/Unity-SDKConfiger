@@ -17,6 +17,8 @@ AndroidStudio工程后续一段时间会完成
 
 保证文件后缀为 *.SDKConfiger.iOS.json
 
+"flag":false  ：表示这个配置文件是否启用
+
 目前支持
 
 zipPath：相对配置文件的路径，*.zip  该文件解压后的所有文件都会被关联到xCode工程中
