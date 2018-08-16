@@ -1,0 +1,103 @@
+{
+    "flag":false,
+    "zipPath":"./xxxx.zip",
+    "enableBitCode":false,
+    "linkFrameworks":[
+        "libz.dylib",
+        "Security.framework",
+        "SystemConfiguration.framework",
+        "JavaScriptCore.framework",
+        "libc++.dylib"
+    ],
+    "linkFlags":[
+        "-fobjc-arc",
+        "-lgmp"
+    ],
+    "urlSchemes":[
+        "XD-XXXXXXX",
+        "tencentXXXXXX",
+        "wxXXXXXXXXXXX"
+    ],
+    "whitelists":[
+        "mqq",
+        "mqqapi",
+        "wtloginmqq2",
+        "mqqopensdkapiV4",
+        "mqqopensdkapiV3",
+        "mqqopensdkapiV2",
+        "mqqwpa",
+        "mqqOpensdkSSoLogin",
+        "mqqgamebindinggroup",
+        "mqqopensdkfriend",
+        "mqzone",
+        "weixin",
+        "wechat"
+    ],
+    "permissions":[
+        {
+            "permission":"NSPhotoLibraryUsageDescription",
+            "describe":"使用需求"
+        },{
+            "permission":"NSCameraUsageDescription",
+            "describe":"使用需求"
+        }
+    ],
+    "nativeCodes":[
+        {
+            "targetFile":"Classes/UnityAppController.mm",
+            "existMark":"// XDSDK 头文件",
+            "insertMark":"",
+            "insertOffset":0,
+            "insertCodes":[
+                "#import <XdComPlatform/XDCore.h>"
+            ]
+        },{
+            "targetFile":"Classes/UnityAppController.mm",
+            "existMark":"- (BOOL)application:(UIApplication*)application openURL:(NSURL*)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id>*)options",
+            "insertMark":"- (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation",
+            "insertOffset":-1,
+            "insertCodes":[
+                "{",
+                "    return YES;",
+                "}"
+            ]
+        },{
+            "targetFile":"Classes/UnityAppController.mm",
+            "existMark":"    // XDSDK application_openURL_options",
+            "insertMark":"- (BOOL)application:(UIApplication*)application openURL:(NSURL*)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id>*)options",
+            "insertOffset":2,
+            "insertCodes":[
+                "    [XDCore HandleXDOpenURL:url];"
+            ]
+        },{
+            "targetFile":"Classes/UnityAppController.mm",
+            "existMark":"    // XDSDK application_openURL_sourceApplication_annotation",
+            "insertMark":"- (BOOL)application:(UIApplication*)application openURL:(NSURL*)url sourceApplication:(NSString*)sourceApplication annotation:(id)annotation",
+            "insertOffset":2,
+            "insertCodes":[
+                "    [XDCore HandleXDOpenURL:url];"
+            ]
+        },{
+            "targetFile":"Classes/UnityAppController.mm",
+            "existMark":"// UMengSDK 头文件",
+            "insertMark":"",
+            "insertOffset":0,
+            "insertCodes":"#import <UMSocialCore/UMSocialCore.h>"
+        },{
+            "targetFile":"Classes/UnityAppController.mm",
+            "existMark":"    // UMengSDK application_didFinishLaunchingWithOptions",
+            "insertMark":"- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions",
+            "insertOffset":2,
+            "insertCodes":[
+                "    [[UMSocialManager defaultManager] openLog:YES];",
+                "    // 获取友盟social版本号",
+                "    NSLog(@\"UMeng social version: %@\", [UMSocialGlobal umSocialSDKVersion]);",
+                "    [UMSocialGlobal shareInstance].type = @\"u3d\";",
+                "    // 设置友盟appkey",
+                "   [[UMSocialManager defaultManager] setUmSocialAppkey:@\"12312321312\"];",
+                "    // 设置微信的appKey和appSecret",
+                "   [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@\"wx12312312312\" appSecret:@\"123124312312312\" redirectURL:@\"http://mobile.umeng.com/social\"];"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "flag":true,
+    "zipPath":"./Bugly.zip",
+    "enableBitCode":false,
+    "linkFrameworks":[
+        "libz.dylib",
+        "Security.framework",
+        "SystemConfiguration.framework",
+        "JavaScriptCore.framework",
+        "libc++.dylib"
+    ],
+    "linkFlags":[
+
+    ],
+    "urlSchemes":[
+
+    ],
+    "whitelists":[
+
+    ],
+    "permissions":[
+        
+    ],
+    "nativeCodes":[
+        
+    ]
+}
