@@ -16,7 +16,7 @@ AndroidStudio工程后续一段时间会完成
 # 使用方法
 ## iOS xCode工程
 
-请按照 Assets/Plugins/Editor/SDKConfiger/Demo.SDKConfiger.iOS.json 的格式来配置
+请按照 [Demo配置文件](https://github.com/777777716/Unity-SDKConfiger/edit/master/Assets/Plugins/Editor/SDKConfiger/Demo.SDKConfiger.iOS.json) 的格式来配置
 
 保证文件后缀为 *.SDKConfiger.iOS.json
 
@@ -43,6 +43,6 @@ nativeCodes：原生代码中插入自己的代码
 # 示例
 ## Bugly SDK
 
-路径：Assets/Plugins/BuglyPlugins
+路径：[Bugly示例](https://github.com/777777716/Unity-SDKConfiger/edit/master/Assets/Plugins/BuglyPlugins)
 
-配置文件：Assets/Plugins/BuglyPlugins/iOS/Bugly.SDKConfiger.iOS.json
+配置文件：[Bugly配置文件](https://github.com/777777716/Unity-SDKConfiger/edit/master/Assets/Plugins/BuglyPlugins/iOS/Bugly.SDKConfiger.iOS.json) 
